@@ -22,13 +22,13 @@ const UserForm = ({ user, id }) => {
       }
 
       if (id) {
-        axios.put(`http://10.10.11.139:8000/api/users/${id}`, formData, {
+        axios.put(`http://97.74.82.135:8000/api/users/${id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
       } else {
-        axios.post("http://10.10.11.139:8000/api/users/", formData, {
+        axios.post("http://97.74.82.135:8000/api/users/", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

@@ -22,6 +22,18 @@ class Product(models.Model):
     auto_stock_amount = models.IntegerField()
     price_change_amount = models.IntegerField()
     auto_quantity_change = models.IntegerField(default=100)
+    created_at = models.DateTimeField(default=datetime.now())
+
+    def save(self, *args, **kwargs):
+
+        if self.pk == None:
+            super(Product, self).save(*args, **kwargs)
+        else:
+            price = Product.objects.values('current_price').filter(id=self.pk)
+            current_price = price[0]['current_price']
+            if current_price != self.current_price:
+                ProductPriceHistory.objects.create(updated_current_price=self.current_price, product_id=self.pk)
+            super(Product, self).save(*args, **kwargs)
 
 class ProductPriceHistory(models.Model):
     id = models.AutoField(primary_key=True)

@@ -7,4 +7,5 @@ urlpatterns = [
     path('<int:pk>', views.ProductDetail.as_view()),
     path('getProductDetailById', views.GetProductDetailById.as_view()),
     path('updateCurrentPriceById', views.UpdateCurrentPriceById.as_view()),
+    path('latestProductPriceById', views.LatestProductPriceById.as_view()),
 ]

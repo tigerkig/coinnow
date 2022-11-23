@@ -11,8 +11,8 @@ class BuyHistory(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     product_price = models.IntegerField()
     quantity = models.IntegerField()
-    total_amount = models.IntegerField()
-    created_at = models.DateTimeField(default=datetime.now())
+    total_amount = models.IntegerField(null=True)
+    created_at = models.DateTimeField(default=datetime.now())   
 
 
 class SellHistory(models.Model):
@@ -20,12 +20,13 @@ class SellHistory(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     product_price = models.IntegerField()
     quantity = models.IntegerField()
-    total_amount = models.IntegerField()
+    total_amount = models.IntegerField(null=True)
+    hold_time = models.BigIntegerField(null=True)
     created_at = models.DateTimeField(default=datetime.now())
-
 
 class ProductUserRelation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     quantity = models.IntegerField()
     listViewIsTrue = models.BooleanField(default=False)
+    created_at = models.DateTimeField(default=datetime.now())

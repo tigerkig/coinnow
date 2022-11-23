@@ -9,7 +9,7 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ['id', 'name', 'description', 'image_url', 'current_price', 'minimum_price',
-                  'maximum_price', 'quantity', 'auto_stock_amount', 'price_change_amount', 'category_id', 'auto_quantity_change']
+                  'maximum_price', 'quantity', 'auto_stock_amount', 'price_change_amount', 'category_id', 'auto_quantity_change', 'created_at']
 
 class ProductPriceHistorySerializer(serializers.ModelSerializer):
 

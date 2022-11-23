@@ -6,7 +6,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 import SideBar from "./components/layouts/sidebar";
 import ProductList from "./containers/products";
-import EditProduct from "./containers/Products/EditProduct";
+import EditProduct from "./containers/products/EditProduct";
 import CategoryList from "./containers/Categories";
 import EditCategory from "./containers/Categories/EditCategory";
 import UserList from "./containers/Users";

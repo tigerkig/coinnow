@@ -41,7 +41,7 @@ const CategoryForm = ({ category, id }) => {
       }
 
       if (id) {
-        axios.put(`http://10.10.11.139:8000/api/categories/${id}`, formData, {
+        axios.put(`http://97.74.82.135:8000/api/categories/${id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -51,7 +51,7 @@ const CategoryForm = ({ category, id }) => {
           setFileContentError("Required");
           return;
         }
-        axios.post("http://10.10.11.139:8000/api/categories/", formData, {
+        axios.post("http://97.74.82.135:8000/api/categories/", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
